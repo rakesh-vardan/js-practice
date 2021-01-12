@@ -8,17 +8,19 @@ function reverseUsingNewArray(str) {
         reversed.push(str[i])
     }
     return reversed.join('');
-}
-console.log(reverseUsingNewArray('My name is Rakesh Vardan'));
+};
 
 function reverseUsingInBuiltFunction(str) {
     return str.split('').reverse().join('');
 }
-console.log(reverseUsingInBuiltFunction('My name is Rakesh Vardan'));
 
+const reverseUsingArrowFunction = str => str.split('').reverse().join('');
 
-const reverse2 = str => str.split('').reverse().join('');
-console.log(reverse2('My name is Rakesh Vardan'));
+const reverseUsingArrowShorterVersion = str => [...str].reverse().join('');
 
-const reverse3 = str => [...str].reverse().join('');
-console.log(reverse3('My name is Rakesh Vardan'));
+module.exports = {
+    reverseUsingInBuiltFunction,
+    reverseUsingNewArray,
+    reverseUsingArrowFunction,
+    reverseUsingArrowShorterVersion
+};
